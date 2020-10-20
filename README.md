@@ -69,65 +69,41 @@ Get Advice:
   - auth.login(user)
   - auth.signup(user)
   - auth.logout()
+  - auth.me()
   - auth.getUser() // synchronous
+- User Service
+  - user.profile()
+  - user.feelings()
+  - user.edit()
+
 
 # Server
 ## Models
 User model
-username - String // required
-city - String // required
-email - String // required & unique
-password - String // required
+```javascript
+{
+    username: {type: String, required: true, unique: true}, 
+    city: {type: String, required:true}, 
+    email: {type: String, required:true, unique:true},
+    password: {type: String, required:true}
+}
+```
 Feelings
-title - String // required
-description - String // required
+```javascript
+{
+    title: {type: String, required: true},
+    description: {type: String, required: true} 
+}
+```
+
 ## API Endpoints (backend routes)
-- GET /auth/me
-  - 404 if no user in session
-  - 200 with user object
-- POST /auth/signup
-  - 401 if user logged in
-  - body:
-    - username
-    - city
-    - email
-    - password
-  - validation
-    - fields not empty (422)
-    - user not exists (409)
-  - create user with encrypted password
-  - store user in session
-  - 200 with user object
-- POST /auth/login
-  - 401 if user logged in
-  - body:
-    - email
-    - password
-  - validation
-    - fields not empty (422)
-    - user exists (404)
-    - passdword matches (404)
-  - store user in session
-  - 200 with user object
-- POST /auth/logout
-  - body: (empty)
-  - 204
-- DELETE /user/me/:feelingId
-  - validation
-    - id is valid (404)
-    - id exists (404)
-  - body: (empty - the user is already stored in the session)
-  - remove from list
-  - updates user in session
-- POST /feeling
-  - body:
-    - title
-    - description
-  - validation
-    - fields not empty
-  - create feeling
-  - 200 with restaurant object
-- GET /feeling/:id
+| HTTP Method | URL | Request Body | Success status | Error Status | Description |
+| ----------- | --- | ------------ | -------------- | ------------ | ----------- |
+| GET | `/auth/profile` |   | 200 | 404 | Check if user is logged in and return profile page |
+| POST | `/auth/signup` | {username, city, email, password} | 201 | 404 | Checks if fields not empty (422) and user not exists (409), then create user with encrypted password, and store user in session |
+| POST | `/auth/login` | {username,password} | 200 | 401| Checks if fields not empty (422), if user exists (404), and if password matches (404), then stores user in session |
+| POST | `/auth/logout` |   | 204 | 400 | Logs out the user |
+
 ## Links
 ### Trello/Kanban
 [Link to your trello board](https://trello.com/b/qZdONyAK/confid-19)
