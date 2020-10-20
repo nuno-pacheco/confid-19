@@ -103,6 +103,11 @@ Feelings
 | POST | `/auth/signup` | {username, city, email, password} | 201 | 404 | Checks if fields not empty (422) and user not exists (409), then create user with encrypted password, and store user in session |
 | POST | `/auth/login` | {username,password} | 200 | 401| Checks if fields not empty (422), if user exists (404), and if password matches (404), then stores user in session |
 | POST | `/auth/logout` |   | 204 | 400 | Logs out the user |
+| GET | `/epidemic_evolution/infecteds`|   | 200 | 400 | Show data related with the last 24h infection |
+| GET | `/epidemic_evolution/country/infecteds`|   | 200 | 400 | Show data related with the last 24h infection |
+| GET | `/epidemic_evolution/deaths`|   | 200 | 400 | Show data related with the last 24h deaths|
+| GET | `/epidemic_evolution/country/deaths`|   | 200 | 400 | Show data related with the last 24h deaths|
+
 
 ## Links
 ### Trello/Kanban
