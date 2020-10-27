@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const service = axios.create({
-  baseURL: process.env.REACT_APP_API_BASE_URL,
+  baseURL: "http://localhost:5000",
 });
 
 export const validateSession = (accessToken) => {
@@ -10,9 +10,9 @@ export const validateSession = (accessToken) => {
     .then((response) => response.data)
     .catch((err) => err);
 };
-export const signup = ({ username, email, password }) => {
+export const signup = ({ username, city, email, password }) => {
   return service
-    .post("/user/signup", { username, email, password })
+    .post("/user/signup", { username, city, email, password })
     .then((response) => response.data)
     .catch((err) => err);
 };

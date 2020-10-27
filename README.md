@@ -75,6 +75,11 @@ Get Advice:
   - user.profile()
   - user.feelings()
   - user.edit()
+- Corona Service
+  - getAllCountries()
+  - getSingleCountry()
+  - getCountryCode()
+  - searchCountry()
 
 
 # Server
@@ -82,6 +87,7 @@ Get Advice:
 User model
 ```javascript
 {
+  _id:
     username: {type: String, required: true, unique: true}, 
     city: {type: String, required:true}, 
     email: {type: String, required:true, unique:true},
@@ -91,6 +97,8 @@ User model
 Feelings
 ```javascript
 {
+  _id:
+    user: {type : Schema.Types.Objectid, ref: "User"},
     title: {type: String, required: true},
     description: {type: String, required: true} 
 }

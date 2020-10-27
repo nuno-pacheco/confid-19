@@ -1,0 +1,8 @@
+.logo-main1{
+    display:flex;
+    justify-content: center;
+}
+
+.logo-main1 img{
+    width: 70%;
+}

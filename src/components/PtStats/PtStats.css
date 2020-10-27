@@ -1,0 +1,112 @@
+.homecontent{
+    width: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.homedata{
+    
+}
+
+.homeupdate{
+    position: absolute;
+    width: 40%;
+    height: 25%;
+    left: 15%;
+    top: 48%;
+}
+
+.homeupdate p{
+    font-size: 0.8em;
+}
+
+.infectedsdata24h{
+    position: absolute;
+    width: 23vw;
+    height: 15vh;
+    left: 15%;
+    top: 60%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.infectedsdata24h p {
+    font-style: normal;   
+    font-size: 14px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #4044FD;
+
+}
+
+.deathsdata24h{
+    position: absolute;
+    width: 23vw;
+    height: 94px;
+    left: 60%;
+    top: 60%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.deathsdata24h p{
+    font-style: normal;   
+    font-size: 14px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #E4615E;
+
+}
+
+.infectedsdatatotal{
+    position: absolute;
+    width: 23vw;
+    height: 94px;
+    left: 15%;
+    top: 75%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.infectedsdatatotal p{
+    font-style: normal;   
+    font-size: 14px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #4044FD;
+
+
+}
+
+.deathsdatatotal{
+    position: absolute;
+    width: 23vw;
+    height: 94px;
+    left: 60%;
+    top: 75%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.deathsdatatotal p{
+    font-style: normal;   
+    font-size: 14px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #E4615E;
+
+}

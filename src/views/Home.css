@@ -1,0 +1,21 @@
+.home{
+    width: ;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.buttonslink{
+    margin-top: 80%;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    
+
+    
+}
+
+.buttonlink button{
+    width:10%;
+}

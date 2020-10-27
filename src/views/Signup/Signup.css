@@ -1,0 +1,8 @@
+.question{
+    margin-top: 2%;
+    display: flex;
+    justify-content: flex-end;
+}
+.question p {
+    font-size: 0.8em;
+}

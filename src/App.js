@@ -5,8 +5,10 @@ import AnonRoute from "./components/auth/AnonRoute";
 import PrivateRoute from "./components/auth/PrivateRoute";
 import { validateSession } from "./services/userService";
 import Home from "./views/Home";
-import Login from "./views/Login";
-import Signup from "./views/Signup";
+import Login from "./views/Login/Login";
+import Signup from "./views/Signup/Signup";
+import CountriesList from "./components/CountriesList/CountriesList";
+import PersonalArea from "./views/Personal/Personal"
 
 class App extends React.Component {
   state = {
@@ -46,8 +48,7 @@ class App extends React.Component {
         <BrowserRouter>
           <nav>
             {authenticated && <Link to="/"> Home </Link>}
-            {!authenticated && <Link to="/login"> Login </Link>}
-            {!authenticated && <Link to="/signup"> Signup </Link>}
+            
             {authenticated && (
               <Link to={"/"} onClick={this.handleLogout}>
                 Logout
@@ -62,6 +63,22 @@ class App extends React.Component {
               authenticated={authenticated}
               component={Home}
             />
+            <PrivateRoute
+              exact
+              path="/countries"
+              user={this.state.user}
+              authenticated={authenticated}
+              component={CountriesList}
+            />
+            <PrivateRoute
+              exact
+              path="/personal"
+              user={this.state.user}
+              authenticated={authenticated}
+              component={PersonalArea}
+            />
+
+
             <AnonRoute
               exact
               path="/login"

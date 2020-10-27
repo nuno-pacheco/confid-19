@@ -1,0 +1,8 @@
+.logo-main2{
+    display:flex;
+    justify-content: flex-end;
+}
+
+.logo-main2 img{
+    max-width: 30%;
+}
