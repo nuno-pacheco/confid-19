@@ -54,6 +54,7 @@ class App extends React.Component {
   };
   render() {
     const { authenticated } = this.state;
+
     return (
       <div className="App">
       <div className="Top-left"></div>

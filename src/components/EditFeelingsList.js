@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Header2 from '../components/headers/header2';
+
 
 class EditFeelingsList extends Component {
     state = {
