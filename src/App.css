@@ -12,3 +12,28 @@ form{
   
 }
 
+.Top-left{
+  position: fixed;
+  width: 244px;
+  height: 244px;
+  left: -7%;
+  top: -7%;
+  background: linear-gradient(133.24deg, #5096D7 17.4%, rgba(109, 171, 228, 0.3125) 28.08%, rgba(135, 182, 224, 0.265625) 44.29%, rgba(59, 144, 223, 0) 54.01%);
+
+}
+
+.Bottom-right{
+  position: fixed;
+  width: 244px;
+  height: 244px;
+  right: -7%;
+  bottom: -7%;
+  background: linear-gradient(133.24deg, #5096D7 17.4%, rgba(109, 171, 228, 0.3125) 28.08%, rgba(135, 182, 224, 0.265625) 44.29%, rgba(59, 144, 223, 0) 54.01%);
+  transform: rotate(-180deg);
+}
+
+.mainnavbar{
+  position: absolute;
+  left: 3%;
+  bottom: 2%;
+}

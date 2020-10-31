@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import EditFeelingsList from './EditFeelingsList';
-import AddSensation from './AddSensation';
+
  
 class FeelingDetails extends Component {
   state = {}
@@ -13,7 +13,7 @@ class FeelingDetails extends Component {
 
     getSingleFeeling = () => {
         const { params } = this.props.match;
-        axios.get(`http://localhost:5000/api/all_feelings/${params.id}`)
+        axios.get(`http://localhost:5000/all_feelings/${params.id}`)
         .then( responseFromApi =>{
             const theFeeling = responseFromApi.data;
             this.setState(theFeeling);
@@ -33,8 +33,8 @@ class FeelingDetails extends Component {
 
   //Delete Feeling:
   deleteFeeling = () =>{
-      const { params } = this.props.matc;
-      axios.delete(`http://localhost:5000/api/all_feelings/${params.id}`)
+      const { params } = this.props.match;
+      axios.delete(`http://localhost:5000/all_feelings/${params.id}`)
       .then( () => {
           this.props.history.push('/all_feelings');
       })
@@ -43,13 +43,7 @@ class FeelingDetails extends Component {
       })
   }
   
-  renderAddSensationForm = () => {
-      if(!this.state.title){
-          this.getSingleFeeling();
-      } else {
-          return <AddSensation theFeeling={this.state} getTheFeeling={this.getSingleFeeling} />
-      }
-  }
+
 
 
 
@@ -60,28 +54,12 @@ class FeelingDetails extends Component {
     <div>
         <h1>{this.state.title}</h1>
         <p>{this.state.description}</p>
-        <div>
-            { this.state.sensations && this.state.sensations.length > 0 && <h3>Sensations </h3> }
-            { this.state.sensations && this.state.sensation.map((sensation, index) => {
-                return(
-                    <>
-                        <div key={index}>
-                            <Link to={`/all_feelings/${this.state._id}/sensations/${sensation._id}`}>
-                                { sensation.title }
-                            </Link>
-                        </div>
-                            <div>{this.renderEditForm()}</div>
-                        <button onClick={() => this.deleteFeeling()}>Delete feeling</button>
-                        <br/>
-                        <div>{this.renderAddSensationForm()}</div>
-                        <br/>
-                        <Link to={'/all_feelings'}>Back to all Feelings</Link>
-                    </>
-        
-            )}
-            )}
-        </div>
+        <div>{this.renderEditForm()}</div>
+        <button onClick={() => this.deleteFeeling()}>Delete feeling</button>
+        <br/>
+        <Link to={'/all_feelings'}>Back to all Feelings</Link>
     </div>
+
     )}
 }
 

@@ -45,6 +45,7 @@ class Login extends React.Component {
         {errorMessage !== "" && errorMessage}
         <Header1/>
         <form onSubmit={this.handleSubmit}>
+        <div className="Login">
             <div className="form-group">
               <label htmlFor="exampleInputEmail1">Email: </label>
               <input
@@ -74,6 +75,7 @@ class Login extends React.Component {
               </div>
             </div>
           <button type="submit" className="btn btn-primary"> Login </button>
+        </div>
         </form>
       </div>
     );

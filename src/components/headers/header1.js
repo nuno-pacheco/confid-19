@@ -4,7 +4,7 @@ import './header1.css'
 function Header1() {
     return (
         <div className="logo-main1">
-            <img src="https://res.cloudinary.com/dylut4r4t/image/upload/v1603274628/confid-19/YOU_CAN_TRUST_1_t1knrh.png" alt="logo-confid-19"/>
+            <img src="https://res.cloudinary.com/dylut4r4t/image/upload/v1603837789/confid-19/YOU_CAN_TRUST_keyigb.gif" alt="logo-confid-19"/>
         </div>
     )
 }

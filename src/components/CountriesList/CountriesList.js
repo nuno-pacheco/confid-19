@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { getAllCountries} from '../../services/coronaService';
-import SearchCountry from '../SearchCountry/SearchCountry'
-import axios from "axios";
+import SearchCountry from '../SearchCountry/SearchCountry';
+import Header2 from '../../components/headers/header2';
+import axios from 'axios';
 
 class CountriesList extends Component {
     state = {
@@ -22,27 +23,31 @@ class CountriesList extends Component {
         this.fetchCountries();
     };
 
-    searchCountry = (country) => {
-        this.searchCountry(country)
-          .then((srchResp) => {
-            this.setState({ countries: srchResp });
-          })
-          .catch((error) => console.log(error));
-      };
-
+    handleSearchCountry (newValue) {
+        this.setState({
+        search: newValue,
+        });
+        axios.get(`http://api.coronatracker.com/v3/analytics/newcases/country?q=${newValue}`)
+          .then((resp) => {
+              this.setState({
+                  countries: resp.data
+              })
+      })
+    };  
 
     render = () => {
         console.log(this.state.countries);
 
         return (
             <div>
-                <SearchCountry searchCountry={this.searchCountry} />
+                <Header2/>
+                <SearchCountry searchCountry={this.searchCountry} handleSearchCountry={this.handleSearchCountry.bind(this)}/>
                 <div className='container'>
-                    <div className='row'>
+                    <div className='row cards-allcountries-container'>
                         {this.state.countries.map(
                             ({country_code, country, dailyConfirmed, dailyDeaths, lastUpdated}) => (
-                                <li className="list-group"
-                                style={{ display: 'flex', flexDirection: 'column' }}
+                                <li className="card m-3 d-flex"
+                                style={{maxWidth: 540, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
                                 key={country_code}
                                 >
                                 <div className= " list-group-item each-country">

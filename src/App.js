@@ -8,7 +8,18 @@ import Home from "./views/Home";
 import Login from "./views/Login/Login";
 import Signup from "./views/Signup/Signup";
 import CountriesList from "./components/CountriesList/CountriesList";
-import PersonalArea from "./views/Personal/Personal"
+import PersonalArea from "./views/Personal/Personal";
+import CoronaNews from "./components/CoronaNews/CoronaNews";
+import CreateFeelingsList from "./components/CreateFeelingsList";
+import FeelingsList from "./components/FeelingsList";
+import EditFeelingsList from "./components/EditFeelingsList";
+import FeelingDetails from "./components/FeelingDetails";
+import {RiLogoutCircleRLine} from "react-icons/ri";
+import {RiHome4Line} from "react-icons/ri";
+import {RiUser3Line} from "react-icons/ri";
+import { IconContext } from "react-icons";
+
+
 
 class App extends React.Component {
   state = {
@@ -45,16 +56,21 @@ class App extends React.Component {
     const { authenticated } = this.state;
     return (
       <div className="App">
+      <div className="Top-left"></div>
         <BrowserRouter>
-          <nav>
-            {authenticated && <Link to="/"> Home </Link>}
+        <IconContext.Provider value={{color: "lightgray", size: "2em"}}>
+          <nav className="mainnavbar">
+            {authenticated && <Link to="/"> <RiHome4Line/> </Link>}
             
             {authenticated && (
               <Link to={"/"} onClick={this.handleLogout}>
-                Logout
-              </Link>
+                <RiLogoutCircleRLine/>
+             </Link>
             )}
+
+            {authenticated && <Link to="/personal"> <RiUser3Line/> </Link>}
           </nav>
+        </IconContext.Provider>
           <Switch>
             <PrivateRoute
               exact
@@ -72,11 +88,48 @@ class App extends React.Component {
             />
             <PrivateRoute
               exact
+              path="/news"
+              user={this.state.user}
+              authenticated={authenticated}
+              component={CoronaNews}
+            />
+            <PrivateRoute
+              exact
               path="/personal"
               user={this.state.user}
               authenticated={authenticated}
               component={PersonalArea}
             />
+            <PrivateRoute 
+              exact 
+              path="/all_feelings"
+              user={this.state.user} 
+              authenticated={authenticated}
+              component={FeelingsList}
+            />
+            <PrivateRoute 
+              exact 
+              path="/all_feelings/:id"
+              user={this.state.user} 
+              authenticated={authenticated}
+              component={FeelingDetails}
+            />
+            <PrivateRoute 
+              exact 
+              path="/create"
+              user={this.state.user} 
+              authenticated={authenticated}
+              component={CreateFeelingsList}
+            />
+            <PrivateRoute 
+              exact 
+              path="/edit/:id"
+              user={this.state.user} 
+              authenticated={authenticated}
+              component={EditFeelingsList}
+            />
+
+
 
 
             <AnonRoute
@@ -95,6 +148,7 @@ class App extends React.Component {
             />
           </Switch>
         </BrowserRouter>
+        <div className="Bottom-right"></div>
       </div>
     );
   }

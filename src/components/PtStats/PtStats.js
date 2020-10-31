@@ -52,6 +52,7 @@ class PtStats extends Component {
                                             <p>Total number of deaths:</p>
                                             <p><strong>{totalDeaths}</strong></p>
                                         </div>
+
                                     </div>
                                     
                                 </div>
