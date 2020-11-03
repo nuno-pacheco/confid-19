@@ -15,7 +15,7 @@ class FeelingsList extends Component {
 
   
   getAllFeelings= () =>{
-    axios.get(`http://localhost:5000/all_feelings`)
+    axios.get(`https://confid-19-server.herokuapp.com/all_feelings`)
     .then(response=> {
       this.setState({
         listOfFeelings: response.data

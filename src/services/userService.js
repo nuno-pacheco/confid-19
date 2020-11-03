@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const service = axios.create({
-  baseURL: "http://localhost:5000",
+  baseURL: "https://confid-19-server.herokuapp.com/",
 });
 
 export const validateSession = (accessToken) => {

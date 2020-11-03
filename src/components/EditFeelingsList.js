@@ -14,7 +14,7 @@ class EditFeelingsList extends Component {
      
         event.preventDefault();
      
-        axios.put(`http://localhost:5000/all_feelings/${this.props.theFeeling._id}`, { title, description })
+        axios.put(`https://confid-19-server.herokuapp.com/${this.props.theFeeling._id}`, { title, description })
         .then( () => {
             this.props.getTheFeeling();
             // after submitting the form, redirect to '/all_feelings'

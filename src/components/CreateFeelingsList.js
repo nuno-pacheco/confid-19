@@ -9,7 +9,7 @@ class CreateFeelingsList extends Component {
     event.preventDefault();
     const title = this.state.title;
     const description = this.state.description;
-    axios.post("http://localhost:5000/all_feelings", { title, description })
+    axios.post("https://confid-19-server.herokuapp.com/all_feelings", { title, description })
     .then( () => {
         // this.props.getData();
         this.setState({title: "", description: ""});
