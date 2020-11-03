@@ -19,7 +19,6 @@ class FeelingDetails extends Component {
             this.setState(theFeeling);
         })
         .catch((err)=>{
-            console.log(err)
         })
     }
     
