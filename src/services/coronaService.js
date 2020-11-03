@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const service = axios.create({
-  baseURL: 'http://api.coronatracker.com'
+  baseURL: 'https://api.coronatracker.com'
 });
 
 export const getAllCountries = async () => {
