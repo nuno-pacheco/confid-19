@@ -43,11 +43,6 @@ class FeelingDetails extends Component {
       })
   }
   
-
-
-
-
-
   render(){
     return( 
 

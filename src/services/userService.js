@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const service = axios.create({
-  baseURL: "https://confid-19-server.herokuapp.com/",
+  baseURL: process.env.REACT_APP_API_BASE_URL,
+  withCredentials: true
 });
 
 export const validateSession = (accessToken) => {
@@ -19,7 +20,7 @@ export const signup = ({ username, city, email, password }) => {
 
 export const login = ({ email, password }) => {
   return service
-    .post("/user/login", { email, password })
+    .post("user/login", { email, password })
     .then((response) => response.data)
     .catch((err) => {
       console.log(err);
