@@ -41,8 +41,6 @@ class CountriesList extends Component {
         return (
             <div>
                 <Header2/>
-                
-    
                     <div className="container">
                     <h1>Search a Country!</h1>
                     <Input type="text"

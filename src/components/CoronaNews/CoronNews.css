@@ -1,0 +1,20 @@
+.row{
+    margin-top: -5%;
+}
+.newsImage{
+    display:flex;
+    justify-content: center;
+}
+
+img{
+    align-self: center;
+    width:100%;
+}
+
+.newsTitle{
+    margin-top: 2%;
+}
+
+h3{
+    font-size: 1.3em;
+}

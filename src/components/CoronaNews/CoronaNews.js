@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { getCoronaNews } from "../../services/coronaService";
+import Header2 from '../../components/headers/header2';
+import './CoronNews.css';
 
 class CoronaNews extends Component {
   state = {
@@ -22,22 +24,43 @@ class CoronaNews extends Component {
     console.log(this.state)
     
     return (
-      <div>
-        <ul>
-          {this.state.news.items && this.state.news.items.map(
-            ({ nid, author, title, description, publishedAt }) => (
-              <li key={nid}>
-                <div className="news Content">
-                  <h1>{title}</h1>
-                  <p>{description}</p>
-                  <p>{author}</p>
-                  <sub>{publishedAt}</sub>
+        <div>
+            <Header2/>
+            <div className="container">
+            <h1>Last news about Covid!</h1>
+                <div className="row">
+                    <div className='col-12' style={{ maxHeight: '55vh', maxWidth: '100vw', overflow: 'scroll' }}>
+                        <ul>
+                        {this.state.news.items && this.state.news.items.map(
+                            ({ nid, author, title, description, publishedAt, urlToImage }) => (
+                            <li className="card m-3 d-flex"
+                                style={{maxWidth: 540, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
+                                key={nid}>
+                            <div className= "list-group">
+                                <div className="newsImage">
+                                    <img src={urlToImage} alt={this.props.urlToImage}/> 
+                                </div>
+                                <div className="newsTitle">
+                                    <h3>{title}</h3>
+                                </div>
+                                <div>
+                                    <p>{description}</p>    
+                                </div>
+                                <div>
+                                    <p>{author}</p>    
+                                </div>
+                                <div>
+                                <sub>{publishedAt}</sub>    
+                                </div>
+                            </div>
+                            </li>
+                            )
+                        )}
+                        </ul>
+                    </div>
                 </div>
-              </li>
-            )
-          )}
-        </ul>
-      </div>
+            </div>
+        </div>
     );
   }
 }
