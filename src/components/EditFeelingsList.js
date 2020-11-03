@@ -41,14 +41,16 @@ class EditFeelingsList extends Component {
             <div>
               <hr />
               <h3>Edit form</h3>
-              <form onSubmit={this.handleFormSubmit}>
-                <label>Title:</label>
-                <input type="text" name="title" value={this.state.title} onChange={e => this.handleChangeTitle(e)}/>
-                <label>Description:</label>
-                <textarea name="description" value={this.state.description} onChange={e => this.handleChangeDesc(e)} />
-                
-                <input type="submit" value="Submit" />
-              </form>
+              <div className='col-12' style={{ maxHeight: '55vh', width: '90vw', overflow: 'scroll' }}>
+                <form onSubmit={this.handleFormSubmit}>
+                  <label>Title:</label>
+                  <input type="text" name="title" value={this.state.title} onChange={e => this.handleChangeTitle(e)}/>
+                  <label>Description:</label>
+                  <textarea name="description" value={this.state.description} onChange={e => this.handleChangeDesc(e)} />
+                  
+                  <input type="submit" value="Submit" />
+                </form>
+              </div>
             </div>
             </div>
         )

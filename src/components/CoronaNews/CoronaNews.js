@@ -24,15 +24,17 @@ class CoronaNews extends Component {
         return (
             <div>
                 <ul>
-                    {this.state.news.map(({author, title, description, publishedAt }) => {
-                        return(
+                    {this.state.news.map(
+                        ({nid, author, title, description, publishedAt }) => (
+                            <li key={nid}>
                             <div className="news Content">
                                 <h1>{title}</h1>
                                 <p>{description}</p>
                                 <p>{author}</p>
                                 <sub>{publishedAt}</sub>
                             </div>
-                        )}
+                            </li>
+                        )
                     )}
                 </ul>
                 

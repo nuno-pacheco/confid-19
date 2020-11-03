@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { getAllCountries} from '../../services/coronaService';
-import SearchCountry from '../SearchCountry/SearchCountry';
 import Header2 from '../../components/headers/header2';
-import axios from 'axios';
+import './CoutriesList.css';
+import {Input} from 'mdbreact'
+
 
 class CountriesList extends Component {
     state = {
         countries: [],
-        searchCountry: ''
+        search: ''
     };
 
     fetchCountries = () => {
@@ -20,60 +20,70 @@ class CountriesList extends Component {
     };
 
     componentDidMount = () => {
-        this.fetchCountries();
+        this.fetchCountries()
     };
 
-    handleSearchCountry (newValue) {
-        this.setState({
-        search: newValue,
-        });
-        axios.get(`http://api.coronatracker.com/v3/analytics/newcases/country?q=${newValue}`)
-          .then((resp) => {
-              this.setState({
-                  countries: resp.data
-              })
-      })
-    };  
+    updateSearch(event) {
+        this.setState({search: event.target.value.substr(0,20)});
+    }
+
 
     render = () => {
         console.log(this.state.countries);
+        let filteredCountries = this.state.countries.filter(
+            (country) => {
+                return country.country.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
+            }
+        );
+       
+        
 
         return (
             <div>
                 <Header2/>
-                <SearchCountry searchCountry={this.searchCountry} handleSearchCountry={this.handleSearchCountry.bind(this)}/>
-                <div className='container'>
-                    <div className='row cards-allcountries-container'>
-                        {this.state.countries.map(
-                            ({country_code, country, dailyConfirmed, dailyDeaths, lastUpdated}) => (
-                                <li className="card m-3 d-flex"
-                                style={{maxWidth: 540, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
-                                key={country_code}
-                                >
-                                <div className= " list-group-item each-country">
-                                    <div>
-                                        <Link to={`/countries/${country_code}`}>
-                                            <h4> {country} </h4>
-                                        </Link>
-                                        <div>
-                                            <p>Last 24h hours cases: <strong>{dailyConfirmed}</strong></p> 
-                                        </div>
-                                        <div>
-                                            <p>Last 24h hours deaths: <strong>{dailyDeaths}</strong></p> 
-                                        </div>
-                                        <div>
-                                            <sub>Last update: {lastUpdated} </sub>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
+                
+    
+                    <div className="container">
+                    <h1>Search a Country!</h1>
+                    <Input type="text"
+                        value={this.state.search}
+                        onChange={this.updateSearch.bind(this)}/>  
+                        <div className="row">
+                                <div className='col-12' style={{ maxHeight: '55vh', maxWidth: '100vw', overflow: 'scroll' }}>
+                                    <ul>
+                                    {filteredCountries.map(
+                                        ({country, dailyConfirmed, dailyDeaths, lastUpdated}) => (
+                                            <li className="card m-3 d-flex"
+                                            style={{maxWidth: 540, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
+                                            key={country}
+                                            >
+                                            
+                                            <div className= "list-group">
+                                                <div>
+                                                        <h4> {country} </h4>
+                                                    <div>
+                                                        <p>Last 24h hours cases: <strong>{dailyConfirmed}</strong></p> 
+                                                    </div>
+                                                    <div>
+                                                        <p>Last 24h hours deaths: <strong>{dailyDeaths}</strong></p> 
+                                                    </div>
+                                                    <div>
+                                                        <sub>Last update: {lastUpdated} </sub>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
 
-                                </li>
-                            )
-                        )}
-                    </div>    
-                </div>
+                                            </li>
+                                        )
+                                    )}
+                                    </ul>
+                                    
+                                </div>
+                        </div>
+                    </div>   
             </div>
+               
         )
     }
 }

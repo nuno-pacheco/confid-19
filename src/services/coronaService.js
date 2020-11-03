@@ -14,17 +14,6 @@ export const getAllCountries = async () => {
     }
   };
 
-export const getSingleCountry = async (country_code) => {
-    try {
-        const response = await service.get ('/v3/countries/' + country_code );
-        const country = response.data;
-        return country;
-    } catch (error) {
-        return error;
-    }
-}
-
-
 export const getPtStats = async () => {
   try{
     const ptStats = await service.get('/v3/stats/worldometer/country?countryCode=PT');
@@ -37,7 +26,7 @@ export const getPtStats = async () => {
 
 export const getCoronaNews = async () => {
   try{
-    const coronaNews = await service.get('/news/trending');
+    const coronaNews = await service.get('/news/trending?limit=10&offset&country=Portugal&countryCode%27');
     return coronaNews.data;
   } catch (error) {
     return error;

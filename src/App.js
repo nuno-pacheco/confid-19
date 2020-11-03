@@ -11,7 +11,7 @@ import CountriesList from "./components/CountriesList/CountriesList";
 import PersonalArea from "./views/Personal/Personal";
 import CoronaNews from "./components/CoronaNews/CoronaNews";
 import CreateFeelingsList from "./components/CreateFeelingsList";
-import FeelingsList from "./components/FeelingsList";
+import FeelingsList from "./components/FeelingsList/FeelingsList";
 import EditFeelingsList from "./components/EditFeelingsList";
 import FeelingDetails from "./components/FeelingDetails";
 import {RiLogoutCircleRLine} from "react-icons/ri";

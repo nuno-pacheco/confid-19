@@ -28,7 +28,7 @@ class PtStats extends Component {
                 <ul>
                     {this.state.pt.map(
                         ({dailyConfirmed, dailyDeaths, totalConfirmed, totalDeaths, lastUpdated }) => (
-                            
+                            <div key={""}>
                                 <div className="homecontent">
                                     <div className="homeupdate">
                                         <p><strong>Last update:</strong><i>{lastUpdated}</i></p>
@@ -56,7 +56,7 @@ class PtStats extends Component {
                                     </div>
                                     
                                 </div>
-                            
+                            </div>
                         )
                             
                     )}

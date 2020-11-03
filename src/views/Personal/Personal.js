@@ -15,15 +15,12 @@ function PersonalArea (props) {
                 <h1>Hello {username&&props.user.username} ?</h1>
                     <nav>
                         <div className="buttonBox">
-                            <ul>
-                                <Link to="/all_feelings">
-                                    <button type="button" className="buttonRF">SEE YOUR FEELINGS</button>
-                                </Link>
-                                <Link to="/create">
-                                    <button type="button" className="buttonRF">REGIST NEW FEELING</button>
-                                </Link>
-                                
-                            </ul>
+                            <Link to="/all_feelings">
+                                <button type="button" className="buttonRF">SEE YOUR FEELINGS</button>
+                            </Link>
+                            <Link to="/create">
+                                <button type="button" className="buttonRF">REGIST NEW FEELING</button>
+                            </Link>
                         </div>
                     </nav>
             </div>

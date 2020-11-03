@@ -27,14 +27,16 @@ class CreateFeelingsList extends Component {
       <div>
       <Header2/>
       <h1>How are you feeling {this.props.user.username} ?</h1>
-        <form onSubmit={this.handleFormSubmit}>
-          <label>Title:</label>
-          <input type="text" name="title" value={this.state.title} onChange={ e => this.handleChange(e)}/>
-          <label>Description:</label>
-          <textarea name="description" value={this.state.description} onChange={ e => this.handleChange(e)} />
-          
-          <input type="submit" value="Submit" />
-        </form>
+        <div className='col-12' style={{ maxHeight: '55vh', width: '90vw', overflow: 'scroll' }}>
+          <form onSubmit={this.handleFormSubmit}>
+            <label>Title:</label>
+            <input type="text" name="title" value={this.state.title} onChange={ e => this.handleChange(e)}/>
+            <label>Description:</label>
+            <textarea name="description" value={this.state.description} onChange={ e => this.handleChange(e)} />
+            
+            <input type="submit" value="Submit" />
+          </form>
+        </div>
       </div>
     )
   }
