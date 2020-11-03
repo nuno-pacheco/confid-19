@@ -13,12 +13,13 @@ class FeelingDetails extends Component {
 
     getSingleFeeling = () => {
         const { params } = this.props.match;
-        axios.get(`https://confid-19-server.herokuapp.com/${params.id}`)
+        axios.get(`https://confid-19-server.herokuapp.com/all_feelings/${params.id}`)
         .then( responseFromApi =>{
             const theFeeling = responseFromApi.data;
             this.setState(theFeeling);
         })
         .catch((err)=>{
+            console.log(err)
         })
     }
     
@@ -33,7 +34,7 @@ class FeelingDetails extends Component {
   //Delete Feeling:
   deleteFeeling = () =>{
       const { params } = this.props.match;
-      axios.delete(`https://confid-19-server.herokuapp.com/${params.id}`)
+      axios.delete(`https://confid-19-server.herokuapp.com/all_feelings/${params.id}`)
       .then( () => {
           this.props.history.push('/all_feelings');
       })
