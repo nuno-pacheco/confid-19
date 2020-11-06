@@ -9,6 +9,8 @@ export default {
     span8: 'Criar conta',
     span9: 'Entrar',
     span10: 'POSSO ESTAR INFECTADO',
+    span11: "🇵🇹",
+    span12: "🇬🇧",
     p1: 'Infetados últimas 24H:',
     p2: 'Mortos últimas 24H:',
     p3: 'Total de infectados:',

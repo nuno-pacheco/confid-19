@@ -79,8 +79,8 @@ class App extends React.Component {
               </div>
               <div className="selectLang">
                   <select value={this.setState.lang} onChange={this.onLangChange}>
-                    <option value="en"> 🇬🇧  </option>
-                    <option value="pt"> 🇵🇹 </option>
+                    <option value="en"> Eng </option>
+                    <option value="pt"> Por </option>
                   </select>
               </div>
             </div>

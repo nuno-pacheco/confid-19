@@ -9,6 +9,8 @@ export default {
     span8: 'Sign up',
     span9: 'Login',
     span10: "I THINK I'M INFECTED",
+    span11: "🇵🇹",
+    span12: "🇬🇧",
     p1: 'Infecteds last 24H:',
     p2: 'Deaths last 24H:',
     p3: 'Total infecteds:',
