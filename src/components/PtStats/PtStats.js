@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {getPtStats} from '../../services/coronaService';
+import Translate from 'react-translate-component';
 import './PtStats.css'
 
 class PtStats extends Component {
@@ -31,26 +32,26 @@ class PtStats extends Component {
                             <div key={""}>
                                 <div className="homecontent">
                                     <div className="homeupdate">
-                                        <p><strong>Last update:</strong><i>{lastUpdated}</i></p>
+                                       <p> <Translate content="p5"/><i>{lastUpdated}</i></p>
                                     </div>
                                     <div className="homedata">
                                         <div className="infectedsdata24h">
-                                            <p>Number of infecteds last 24H:</p>
-                                            <p><strong>{dailyConfirmed}</strong></p>
+                                            <Translate content="p1" component="p"/>
+                                            <p><strong className="numbers">{dailyConfirmed}</strong></p>
                                         </div>
                                         <div className="deathsdata24h">
-                                            <p>Number of deaths last 24H:</p>
-                                            <p><strong>{dailyDeaths}</strong></p>
+                                            <Translate content="p2" component="p"/>
+                                            <p><strong className="numbers">{dailyDeaths}</strong></p>
                                         </div>
                                     </div>
                                     <div className="homedata">
                                         <div className="infectedsdatatotal">
-                                            <p>Total number of infecteds:</p>
-                                            <p><strong>{totalConfirmed}</strong></p>
+                                            <Translate content="p3" component="p"/>
+                                            <p><strong className="numbers">{totalConfirmed}</strong></p>
                                         </div>
                                         <div className="deathsdatatotal">
-                                            <p>Total number of deaths:</p>
-                                            <p><strong>{totalDeaths}</strong></p>
+                                            <Translate content="p4" component="p"/>
+                                            <p><strong className="numbers">{totalDeaths}</strong></p>
                                         </div>
 
                                     </div>

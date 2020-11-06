@@ -17,4 +17,14 @@ img{
 
 h3{
     font-size: 1.3em;
+    padding: 1.5%;
+}
+
+p{
+    padding: 1.5%;
+}
+
+.sub{
+    margin-top: -5%;
+    padding: 1.5%;
 }

@@ -7,12 +7,14 @@
 }
 
 
-
 .question{
     margin-top: 2%;
+    max-width: 120%;
     display: flex;
-    justify-content: flex-end;
+    display: inline;
+    align-content: flex-end;
 }
+
 .question p {
     font-size: 0.8em;
 }

@@ -18,14 +18,27 @@ import {RiLogoutCircleRLine} from "react-icons/ri";
 import {RiHome4Line} from "react-icons/ri";
 import {RiUser3Line} from "react-icons/ri";
 import { IconContext } from "react-icons";
+import Footer from "./components/Navbar/Footer";
+import counterpart from 'counterpart';
+import en from './components/translations/en';
+import pt from './components/translations/pt';
 
-
+counterpart.registerTranslations('en', en);
+counterpart.registerTranslations('pt', pt);
+counterpart.setLocale('en');
 
 class App extends React.Component {
   state = {
     authenticated: false,
     user: {},
+    lang:'en'
   };
+
+  onLangChange = (e) => {
+    this.setState({lang: e.target.value});
+    counterpart.setLocale(e.target.value);
+  }
+
   componentDidMount = () => {
     const accessToken = localStorage.getItem("accessToken");
     if (accessToken) {
@@ -57,19 +70,31 @@ class App extends React.Component {
 
     return (
       <div className="App">
-      <div className="Top-left"></div>
         <BrowserRouter>
-        <IconContext.Provider value={{color: "lightgray", size: "2em"}}>
+        <IconContext.Provider value={{color: "rgb(129, 129, 129)", size: "2em"}}>
           <nav className="mainnavbar">
-            {authenticated && <Link to="/"> <RiHome4Line/> </Link>}
-            
-            {authenticated && (
-              <Link to={"/"} onClick={this.handleLogout}>
-                <RiLogoutCircleRLine/>
-             </Link>
-            )}
-
-            {authenticated && <Link to="/personal"> <RiUser3Line/> </Link>}
+            <div className="leftContent">  
+              <div className="confidLogo">
+                <img src="https://res.cloudinary.com/dylut4r4t/image/upload/v1603274628/confid-19/YOU_CAN_TRUST_1_t1knrh.png" alt="Confid-logo"></img>
+              </div>
+              <div className="selectLang">
+                  <select value={this.setState.lang} onChange={this.onLangChange}>
+                    <option value="en"> 🇬🇧  </option>
+                    <option value="pt"> 🇵🇹 </option>
+                  </select>
+              </div>
+            </div>
+              <div className="icons">
+                {authenticated && <Link to="/"> <RiHome4Line/> </Link>}
+                {authenticated && <Link to="/personal"> <RiUser3Line/> </Link>}
+                
+                {authenticated && (
+                  <Link to={"/"} onClick={this.handleLogout}>
+                    <RiLogoutCircleRLine/>
+                </Link>
+                )}
+              </div>
+  
           </nav>
         </IconContext.Provider>
           <Switch>
@@ -149,7 +174,7 @@ class App extends React.Component {
             />
           </Switch>
         </BrowserRouter>
-        <div className="Bottom-right"></div>
+        <Footer/>
       </div>
     );
   }

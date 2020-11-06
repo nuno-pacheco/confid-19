@@ -1,5 +1,5 @@
 .homecontent{
-    width: 100;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7,27 +7,28 @@
 
 .homeupdate{
     position: absolute;
-    width: 70%;
-    height: 5%;
     left: 5%;
-    top: 55%;
+    top: 48%;
+    width: 80%;
+
 }
 
 .homeupdate p{
-    font-size: 0.8em;
-    color: rgb(129, 129, 129)
+    font-size: 0.9em;
+    color: rgb(129, 129, 129);
 }
 
 .infectedsdata24h{
     position: absolute;
     width: 43%;
-    height: 15vh;
+    height: 14vh;
     left: 5%;
-    top: 20%;
+    top: 15%;
     display:flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgb(210,210,210, 0.4);
+    border-style: solid;
+    border-color: rgb(210,210,210, 0.4);
     padding-top: 2%;
     padding-bottom: 2%;
     border-radius: 8%;
@@ -47,13 +48,14 @@
 .deathsdata24h{
     position: absolute;
     width: 43%;
-    height: 15vh;
+    height: 14vh;
     right: 5%;
-    top: 20%;
+    top: 15%;
     display:flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgb(210,210,210, 0.4);
+    border-style: solid;
+    border-color: rgb(210,210,210, 0.4);
     padding-top: 2%;
     padding-bottom: 2%;
     border-radius: 8%;
@@ -73,13 +75,14 @@
 .infectedsdatatotal{
     position: absolute;
     width: 43%;
-    height: 15vh;
+    height: 14vh;
     left: 5%;
-    top: 38%;
+    top: 32%;
     display:flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgb(210,210,210, 0.4);
+    border-style: solid;
+    border-color: rgb(210,210,210, 0.4);
     padding-top: 2%;
     padding-bottom: 2%;
     border-radius: 8%;
@@ -99,13 +102,14 @@
 .deathsdatatotal{
     position: absolute;
     width: 43%;
-    height: 15vh;
+    height: 14vh;
     right: 5%;
-    top: 38%;
+    top: 32%;
     display:flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgb(210,210,210, 0.4);
+    border-style: solid;
+    border-color: rgb(210,210,210, 0.4);
     padding-top: 2%;
     padding-bottom: 2%;
     border-radius: 8%;
@@ -120,6 +124,10 @@
     text-align: center;
     color: #E4615E;
 
+}
+
+.numbers{
+    font-size: 1.7em;
 }
 
 .home{

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { getCoronaNews } from "../../services/coronaService";
 import Header2 from '../../components/headers/header2';
 import './CoronNews.css';
+import { FacebookButton, FacebookCount } from "react-social";
 
 class CoronaNews extends Component {
   state = {
@@ -22,6 +23,7 @@ class CoronaNews extends Component {
 
   render() {
     console.log(this.state)
+
     
     return (
         <div>
@@ -32,7 +34,7 @@ class CoronaNews extends Component {
                     <div className='col-12' style={{ maxHeight: '55vh', maxWidth: '100vw', overflow: 'scroll' }}>
                         <ul>
                         {this.state.news.items && this.state.news.items.map(
-                            ({ nid, author, title, description, publishedAt, urlToImage }) => (
+                            ({ nid, title, description, publishedAt, url, urlToImage }) => (
                             <li className="card m-3 d-flex"
                                 style={{maxWidth: 540, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
                                 key={nid}>
@@ -46,12 +48,13 @@ class CoronaNews extends Component {
                                 <div>
                                     <p>{description}</p>    
                                 </div>
-                                <div>
-                                    <p>{author}</p>    
-                                </div>
-                                <div>
+                                <div className="sub">
                                 <sub>{publishedAt}</sub>    
                                 </div>
+                                <FacebookButton url={url} appId={949368812258074}>
+                                    <FacebookCount url={url} />
+                                    {"Share" + url}
+                                </FacebookButton>
                             </div>
                             </li>
                             )

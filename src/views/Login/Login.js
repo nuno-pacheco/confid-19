@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { login } from "../../services/userService";
 import Header1 from "../../components/headers/header1";
+import Translate from 'react-translate-component';
 import './Login.css'
 
 class Login extends React.Component {
@@ -47,7 +48,7 @@ class Login extends React.Component {
         <form onSubmit={this.handleSubmit}>
         <div className="Login">
             <div className="form-group">
-              <label htmlFor="exampleInputEmail1">Email: </label>
+            <Translate content="label5" component="label" htmlFor="exampleInputUserName"/>
               <input
                 name="email"
                 value={email}
@@ -60,7 +61,7 @@ class Login extends React.Component {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="exampleInputPassword1">Password: </label>
+            <Translate content="label6" component="label" htmlFor="exampleInputUserName"/>
               <input
                 name="password"
                 type="password"
@@ -71,10 +72,10 @@ class Login extends React.Component {
                 id="exampleInputPassword1"
               />
               <div className="question">
-                <Link to={"/signup"}><p><strong>Don't have an Account?</strong></p></Link>
+                <Link to={"/signup"}><strong><Translate content="p7" component="p"/></strong></Link>
               </div>
             </div>
-          <button type="submit" className="btn btn-primary"> Login </button>
+          <button type="submit" className="btn btn-primary"><Translate content="span9"/></button>
         </div>
         </form>
       </div>

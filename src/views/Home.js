@@ -1,42 +1,50 @@
-import React from "react";
+import React, { Component } from "react";
 import { Link } from 'react-router-dom';
-import Header2 from "../components/headers/header2";
 import PtStats from "../components/PtStats/PtStats";
+import counterpart from 'counterpart';
+import Translate from 'react-translate-component';
+import en from '../components/translations/en';
+import pt from '../components/translations/pt';
 import './Home.css';
 
+counterpart.registerTranslations('en', en);
+counterpart.registerTranslations('pt', pt);
+counterpart.setLocale('en');
 
-function Home () {
-  return (
-    <div className="Home">
-      <div>
-      <Header2/>
-      </div>
-      <div>
-      <PtStats/>
-      </div>
-        <div className="home">
-          <div className="buttonslink">
-            <div>
-              <nav>
+class Home extends Component {
 
-              <Link to="/personal">
-                <button type="button" className="buttonPP">Go to my personal area</button>
-              </Link>
+  
 
-              <Link to="/countries">
-                <button type="button" className="buttonWW">See WorldWide Situation</button>
-              </Link>
 
-              <Link to="/news">
-                <button type="button" className="buttonPP">See news about covid</button>
-              </Link>
+  render(){
+    return (
+      <div className="Home">
+        <div>
+        <PtStats/>
+        </div>
+          <div className="home">
+            <div className="buttonslink">
+              <div>
+                <nav>
 
-              </nav>
+                <Link to="/personal">
+                  <button type="button" className="buttonPP"><Translate content="span1"/></button>
+                </Link>
+
+                <Link to="/countries">
+                  <button type="button" className="buttonWW"><Translate content="span2"/></button>
+                </Link>
+
+                <Link to="/news">
+                  <button type="button" className="buttonPP"><Translate content="span3"/></button>
+                </Link>
+
+                </nav>
+              </div>
             </div>
           </div>
-        </div>
-    </div>
-  );
-};
-
+      </div>
+    );
+  };
+}
 export default Home;

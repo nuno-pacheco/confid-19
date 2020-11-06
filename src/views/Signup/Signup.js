@@ -2,6 +2,7 @@ import React from "react";
 import { signup } from "../../services/userService";
 import { Link } from "react-router-dom";
 import Header1 from "../../components/headers/header1";
+import Translate from 'react-translate-component';
 import './Signup.css'
 
 class Signup extends React.Component {
@@ -48,7 +49,7 @@ class Signup extends React.Component {
         <form onSubmit={this.handleSubmit}>
         <div className="Signup">
           <div className="form-group">
-            <label htmlFor="exampleInputUserName">username: </label>
+            <Translate content="label3" component="label" htmlFor="exampleInputUserName"/>
             <input
               name="username"
               value={username}
@@ -60,7 +61,7 @@ class Signup extends React.Component {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="exampleInputCity">city: </label>
+            <Translate content="label4" component="label" htmlFor="exampleInputUserName"/>
             <input
               name="city"
               value={city}
@@ -72,7 +73,7 @@ class Signup extends React.Component {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="exampleEmail">Email: </label>
+            <Translate content="label5" component="label" htmlFor="exampleInputUserName"/>
             <input
               name="email"
               value={email}
@@ -85,7 +86,7 @@ class Signup extends React.Component {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="exampleInputPassword1">Password: </label>
+            <Translate content="label6" component="label" htmlFor="exampleInputUserName"/>
             <input
               name="password"
               type="password"
@@ -96,10 +97,10 @@ class Signup extends React.Component {
               id="exampleInputPassword1"
             />
             <div className="question">
-              <Link to={"/login"}><p><strong>Already have an Account?</strong></p></Link>
+              <Link to={"/login"}><strong><Translate content="p6" component="p"/></strong></Link>
             </div>
           </div>
-          <button type="submit" className="btn btn-primary"> Sign up </button>
+          <button type="submit" className="btn btn-primary"><Translate content="span8"/></button>
           </div>
         </form>
       </div>

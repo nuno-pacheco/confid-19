@@ -1,7 +1,17 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Header2 from '../components/headers/header2';
- 
+import counterpart from 'counterpart';
+import Translate from 'react-translate-component';
+import en from '../components/translations/en';
+import pt from '../components/translations/pt';
+
+counterpart.registerTranslations('en', en);
+counterpart.registerTranslations('pt', pt);
+counterpart.setLocale('en');
+
+
+
 class CreateFeelingsList extends Component {
   state = { title: "", description: "" }
    
@@ -26,12 +36,12 @@ class CreateFeelingsList extends Component {
     return(
       <div>
       <Header2/>
-      <h1>How are you feeling {this.props.user.username} ?</h1>
+      <h1><Translate content="span7"/> {this.props.user.username} ?</h1>
         <div className='col-12' style={{ maxHeight: '55vh', width: '90vw', overflow: 'scroll' }}>
           <form onSubmit={this.handleFormSubmit}>
-            <label>Title:</label>
+            <Translate content="label1" component="label"/>
             <input type="text" name="title" value={this.state.title} onChange={ e => this.handleChange(e)}/>
-            <label>Description:</label>
+            <Translate content="label2" component="label"/>
             <textarea name="description" value={this.state.description} onChange={ e => this.handleChange(e)} />
             
             <input type="submit" value="Submit" />

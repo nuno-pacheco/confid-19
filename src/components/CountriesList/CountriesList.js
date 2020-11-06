@@ -2,7 +2,15 @@ import React, { Component } from 'react';
 import { getAllCountries} from '../../services/coronaService';
 import Header2 from '../../components/headers/header2';
 import './CoutriesList.css';
-import {Input} from 'mdbreact'
+import {Input} from 'mdbreact';
+import counterpart from 'counterpart';
+import Translate from 'react-translate-component';
+import en from '../../components/translations/en';
+import pt from '../../components/translations/pt';
+
+counterpart.registerTranslations('en', en);
+counterpart.registerTranslations('pt', pt);
+counterpart.setLocale('en');
 
 
 class CountriesList extends Component {
@@ -42,7 +50,7 @@ class CountriesList extends Component {
             <div>
                 <Header2/>
                     <div className="container">
-                    <h1>Search a Country!</h1>
+                    <Translate content="h1" component="h1"/>
                     <Input type="text"
                         value={this.state.search}
                         onChange={this.updateSearch.bind(this)}/>  
@@ -50,7 +58,7 @@ class CountriesList extends Component {
                                 <div className='col-12' style={{ maxHeight: '55vh', maxWidth: '100vw', overflow: 'scroll' }}>
                                     <ul>
                                     {filteredCountries.map(
-                                        ({country, dailyConfirmed, dailyDeaths, lastUpdated}) => (
+                                        ({countryCode, country, dailyConfirmed, dailyDeaths, lastUpdated}) => (
                                             <li className="card m-3 d-flex"
                                             style={{maxWidth: 540, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
                                             key={country}
@@ -58,7 +66,12 @@ class CountriesList extends Component {
                                             
                                             <div className= "list-group">
                                                 <div>
+                                                    <div>
+                                                        <img src={`https://www.countryflags.io/${countryCode}/flat/64.png`} alt="Country Flag"></img>
+                                                    </div>
+                                                    <div>
                                                         <h4> {country} </h4>
+                                                        </div>
                                                     <div>
                                                         <p>Last 24h hours cases: <strong>{dailyConfirmed}</strong></p> 
                                                     </div>
