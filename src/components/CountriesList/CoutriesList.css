@@ -1,9 +1,16 @@
-.container{
-    margin-top: 10%;
+.countriescontainer{
+    margin-top: -20%;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.countriesTitle{
+    margin-top: 10%;
+    font-size: 1.8em;
+    color: lightslategray;
+
 }
 
 .container h1{

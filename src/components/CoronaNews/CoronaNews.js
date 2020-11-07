@@ -30,9 +30,9 @@ class CoronaNews extends Component {
     
     return (
         <div>
-            <div className="container">
+            <div className="container newscontainer">
             <IconContext.Provider value={{color: "white", size: "2em"}}>
-            <Translate content="h11" component="h1"/>
+            <h1 className="newsTitle1"><Translate content="h11"/></h1>
                 <div className="row">
                     <div className='col-12' style={{ maxHeight: '65vh', maxWidth: '100vw', overflow: 'scroll' }}>
                         <ul>

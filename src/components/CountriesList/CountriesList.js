@@ -47,8 +47,8 @@ class CountriesList extends Component {
 
         return (
             <div>
-                <div className="container">
-                    <Translate content="h1" component="h1"/>
+                <div className="container countriescontainer">
+                    <h1 className="countriesTitle"><Translate content="h1"/></h1>
                     <Input type="text"
                         value={this.state.search}
                         onChange={this.updateSearch.bind(this)} className="searchCountry"/>  
