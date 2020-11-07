@@ -5,13 +5,16 @@
 }
 
 .buttonBox{
-    margin-top: 20%;
+    margin-top: 12%;
 }
 
-.container h1{
+.personalh1{
+    margin-top: -15%;
+}
+
+.personalh1 h1{
     font-size: 1.8em;
-    color: lightslategray;
-    margin-top: 15%;
+    color: lightslategray
 }
 
 .buttonRF{

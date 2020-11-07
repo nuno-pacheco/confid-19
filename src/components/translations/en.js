@@ -12,6 +12,7 @@ export default {
     span11: "Update",
     span12: "Delete",
     span13: "Share",
+    span14: "Create",
     p1: 'Infecteds last 24H:',
     p2: 'Deaths last 24H:',
     p3: 'Total infecteds:',

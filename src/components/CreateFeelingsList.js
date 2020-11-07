@@ -1,15 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Header2 from '../components/headers/header2';
-import counterpart from 'counterpart';
 import Translate from 'react-translate-component';
-import en from '../components/translations/en';
-import pt from '../components/translations/pt';
-
-counterpart.registerTranslations('en', en);
-counterpart.registerTranslations('pt', pt);
-counterpart.setLocale('en');
-
+import './CreateFeelingsList.css';
 
 
 class CreateFeelingsList extends Component {
@@ -34,17 +26,31 @@ class CreateFeelingsList extends Component {
  
   render(){
     return(
-      <div>
-      <Header2/>
-      <h1><Translate content="span7"/> {this.props.user.username} ?</h1>
+      <div className="mainCreateFeeling">
+      <h1 className="createTitle"><Translate content="span7"/> {this.props.user.username} ?</h1>
         <div className='col-12' style={{ maxHeight: '55vh', width: '90vw', overflow: 'scroll' }}>
           <form onSubmit={this.handleFormSubmit}>
+          <div className="createFeeling">
+            <div className="form-group titleCreate">
             <Translate content="label1" component="label"/>
-            <input type="text" name="title" value={this.state.title} onChange={ e => this.handleChange(e)}/>
+            <input
+              name="title"
+              value={this.state.title}
+              onChange={e => this.handleChange(e)}                     
+              type="text" 
+            />
+            </div>
+            <div className="form-group descrCreate">
             <Translate content="label2" component="label"/>
-            <textarea name="description" value={this.state.description} onChange={ e => this.handleChange(e)} />
-            
-            <input type="submit" value="Submit" />
+            <input
+              name="description"
+              value={this.state.description}
+              onChange={e => this.handleChange(e)}                     
+              type="text" 
+              />
+            </div>
+          </div>
+          <button type="submit" value="Submit" className="btn btn-primary"><Translate content="span14" component="span"/></button>
           </form>
         </div>
       </div>

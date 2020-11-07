@@ -1,0 +1,45 @@
+.mainCreateFeeling{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.createFeeling{
+    margin-top:10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.createTitle{
+    margin-top: 30%;
+    font-size: 1.8em;
+    color: lightslategray;
+}
+
+.titleCreate{
+    display:flex;
+    flex-direction: column;
+}
+
+.titleCreate input{
+    width: 80vw;
+    height: 5vh;
+}
+
+.descrCreate{
+    display:flex;
+    flex-direction: column;
+}
+
+.descrCreate input{
+    width: 80vw;
+    height: 20vh;
+    margin-top:2%;
+}
+
+.btn{
+    margin-left: 2%;
+
+}
