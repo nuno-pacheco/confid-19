@@ -9,8 +9,9 @@ export default {
     span8: 'Sign up',
     span9: 'Login',
     span10: "I THINK I'M INFECTED",
-    span11: "🇵🇹",
-    span12: "🇬🇧",
+    span11: "Update",
+    span12: "Delete",
+    span13: "Share",
     p1: 'Infecteds last 24H:',
     p2: 'Deaths last 24H:',
     p3: 'Total infecteds:',
@@ -26,5 +27,7 @@ export default {
     label5: 'Email',
     label6: 'Password',
     h1: 'Search a Country!',
+    h11: 'Last news about Covid!',
+    h3: 'Edit form',
 
 }

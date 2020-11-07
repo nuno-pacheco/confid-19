@@ -25,13 +25,13 @@ import pt from './components/translations/pt';
 
 counterpart.registerTranslations('en', en);
 counterpart.registerTranslations('pt', pt);
-counterpart.setLocale('en');
+counterpart.setLocale('pt');
 
 class App extends React.Component {
   state = {
     authenticated: false,
     user: {},
-    lang:'en'
+    lang:'pt'
   };
 
   onLangChange = (e) => {
@@ -79,8 +79,8 @@ class App extends React.Component {
               </div>
               <div className="selectLang">
                   <select value={this.setState.lang} onChange={this.onLangChange}>
-                    <option value="en"> Eng </option>
                     <option value="pt"> Por </option>
+                    <option value="en"> Eng </option>
                   </select>
               </div>
             </div>

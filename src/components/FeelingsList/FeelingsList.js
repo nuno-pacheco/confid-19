@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import Header2 from '../headers/header2';
+import Translate from 'react-translate-component';
 import './FeelingsList.css';
 
 
@@ -32,11 +32,10 @@ class FeelingsList extends Component {
  
   render(){
     return(
-      <div className="container">
-      <Header2/>
-      <h1>How are you feeling {this.props.user.username} ?</h1>
+      <div className="container1">
+        <h1><Translate content="span7"/> {this.props.user.username} ?</h1>
         <div className ="row">
-          <div className='col-12' style={{ maxHeight: '55vh', width: '90vw', overflow: 'scroll' }}>  
+          <div className='col-12' style={{ maxHeight: '67vh', width: '98vw', overflow: 'scroll' }}>  
             <ul>
               { this.state.listOfFeelings.map( feeling => {
                 return (

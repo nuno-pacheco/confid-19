@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Translate from 'react-translate-component';
+import './EditFeelingsList.css'
 
 
 class EditFeelingsList extends Component {
@@ -37,21 +39,32 @@ class EditFeelingsList extends Component {
      
       render(){
         return (
-          <div>
-            <div>
-              <hr />
-              <h3>Edit form</h3>
-              <div className='col-12' style={{ maxHeight: '55vh', width: '90vw', overflow: 'scroll' }}>
+          <div className="editForm">
+            <hr/>
+              <Translate content="h3" component="h3"/>
                 <form onSubmit={this.handleFormSubmit}>
-                  <label>Title:</label>
-                  <input type="text" name="title" value={this.state.title} onChange={e => this.handleChangeTitle(e)}/>
-                  <label>Description:</label>
-                  <textarea name="description" value={this.state.description} onChange={e => this.handleChangeDesc(e)} />
-                  
-                  <input type="submit" value="Submit" />
+                <div className="editFeeling">
+                  <div className="form-group titleEdit">
+                  <Translate content="label1" component="label"/>
+                  <input
+                    name="title"
+                    value={this.state.title}
+                    onChange={e => this.handleChangeTitle(e)}                     
+                    type="text" 
+                  />
+                  </div>
+                  <div className="form-group descrEdit">
+                  <Translate content="label2" component="label"/>
+                  <input
+                    name="description"
+                    value={this.state.description}
+                    onChange={e => this.handleChangeDesc(e)}                     
+                    type="text" 
+                  />
+                  </div>
+                </div>
+                  <button type="submit" value="Submit" className="btn btn-primary"><Translate content="span11" component="span"/></button>
                 </form>
-              </div>
-            </div>
             </div>
         )
       }

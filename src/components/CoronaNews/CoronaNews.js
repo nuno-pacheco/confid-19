@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 import { getCoronaNews } from "../../services/coronaService";
-import Header2 from '../../components/headers/header2';
 import './CoronNews.css';
-import { FacebookButton, FacebookCount } from "react-social";
+import Translate from 'react-translate-component';
+import { FacebookButton }  from "react-social";
+import { IconContext } from "react-icons";
+import {RiFacebookBoxFill} from "react-icons/ri";
+
 
 class CoronaNews extends Component {
   state = {
@@ -27,11 +30,11 @@ class CoronaNews extends Component {
     
     return (
         <div>
-            <Header2/>
             <div className="container">
-            <h1>Last news about Covid!</h1>
+            <IconContext.Provider value={{color: "white", size: "2em"}}>
+            <Translate content="h11" component="h1"/>
                 <div className="row">
-                    <div className='col-12' style={{ maxHeight: '55vh', maxWidth: '100vw', overflow: 'scroll' }}>
+                    <div className='col-12' style={{ maxHeight: '65vh', maxWidth: '100vw', overflow: 'scroll' }}>
                         <ul>
                         {this.state.news.items && this.state.news.items.map(
                             ({ nid, title, description, publishedAt, url, urlToImage }) => (
@@ -50,10 +53,9 @@ class CoronaNews extends Component {
                                 </div>
                                 <div className="sub">
                                 <sub>{publishedAt}</sub>    
-                                </div>
-                                <FacebookButton url={url} appId={949368812258074}>
-                                    <FacebookCount url={url} />
-                                    {"Share" + url}
+                                </div>                            
+                                <FacebookButton url={url} appId={949368812258074} className="faceButton">
+                                     <RiFacebookBoxFill/> <Translate content="span13"/>
                                 </FacebookButton>
                             </div>
                             </li>
@@ -62,6 +64,7 @@ class CoronaNews extends Component {
                         </ul>
                     </div>
                 </div>
+            </IconContext.Provider>    
             </div>
         </div>
     );

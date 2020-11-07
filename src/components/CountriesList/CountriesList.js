@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { getAllCountries} from '../../services/coronaService';
-import Header2 from '../../components/headers/header2';
 import './CoutriesList.css';
 import {Input} from 'mdbreact';
 import counterpart from 'counterpart';
@@ -48,38 +47,46 @@ class CountriesList extends Component {
 
         return (
             <div>
-                <Header2/>
-                    <div className="container">
+                <div className="container">
                     <Translate content="h1" component="h1"/>
                     <Input type="text"
                         value={this.state.search}
-                        onChange={this.updateSearch.bind(this)}/>  
+                        onChange={this.updateSearch.bind(this)} className="searchCountry"/>  
                         <div className="row">
                                 <div className='col-12' style={{ maxHeight: '55vh', maxWidth: '100vw', overflow: 'scroll' }}>
                                     <ul>
                                     {filteredCountries.map(
-                                        ({countryCode, country, dailyConfirmed, dailyDeaths, lastUpdated}) => (
+                                        ({countryCode, country, dailyConfirmed, dailyDeaths, totalConfirmed, totalDeaths, lastUpdated}) => (
                                             <li className="card m-3 d-flex"
-                                            style={{maxWidth: 540, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
+                                            style={{width: 340, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
                                             key={country}
                                             >
                                             
                                             <div className= "list-group">
                                                 <div>
-                                                    <div>
-                                                        <img src={`https://www.countryflags.io/${countryCode}/flat/64.png`} alt="Country Flag"></img>
-                                                    </div>
-                                                    <div>
+                                                    <div className="countryFlags">
                                                         <h4> {country} </h4>
+                                                        <img src={`https://www.countryflags.io/${countryCode}/flat/64.png`} alt="Country Flag"></img>
+                                                    
+                                                    </div>
+                                                    <div className="dailyContent">                                                
+                                                        <div>
+                                                            <p className="infecteds"><Translate content="p1"/> <br/> <strong className="numb">{dailyConfirmed}</strong></p> 
                                                         </div>
-                                                    <div>
-                                                        <p>Last 24h hours cases: <strong>{dailyConfirmed}</strong></p> 
+                                                        <div>
+                                                            <p className="deaths"><Translate content="p2"/> <br/> <strong className="numb">{dailyDeaths}</strong></p> 
+                                                        </div>
+                                                    </div>
+                                                    <div className="totalContent">
+                                                        <div>
+                                                            <p className="infecteds"><Translate content="p3"/> <br/> <strong className="numb">{totalConfirmed}</strong></p> 
+                                                        </div>
+                                                        <div>
+                                                            <p className="deaths"><Translate content="p4"/> <br/> <strong className="numb">{totalDeaths}</strong></p> 
+                                                        </div>
                                                     </div>
                                                     <div>
-                                                        <p>Last 24h hours deaths: <strong>{dailyDeaths}</strong></p> 
-                                                    </div>
-                                                    <div>
-                                                        <sub>Last update: {lastUpdated} </sub>
+                                                        <sub><Translate content="span11"/> {lastUpdated} </sub>
                                                     </div>
                                                     
                                                 </div>
@@ -92,7 +99,7 @@ class CountriesList extends Component {
                                     
                                 </div>
                         </div>
-                    </div>   
+                </div>   
             </div>
                
         )
