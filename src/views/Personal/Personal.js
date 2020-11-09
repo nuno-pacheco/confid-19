@@ -29,7 +29,7 @@ function PersonalArea (props) {
                             <Link to="/create">
                                 <button type="button" className="buttonRF"><Translate content="span5"/></button>
                             </Link>
-                            <Link to="/create">
+                            <Link to="/chatbot">
                                 <button type="button" className="buttonPI"><Translate content="span10"/></button>
                             </Link>
 

@@ -12,6 +12,7 @@
     "mdbreact": "^4.27.0",
     "prop-types": "^15.7.2",
     "react": "^16.14.0",
+    "react-chatbot-kit": "^1.1.0",
     "react-dom": "^16.14.0",
     "react-facebook": "^8.1.4",
     "react-icons": "^3.11.0",

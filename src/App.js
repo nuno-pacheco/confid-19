@@ -14,6 +14,7 @@ import CreateFeelingsList from "./components/CreateFeelingsList";
 import FeelingsList from "./components/FeelingsList/FeelingsList";
 import EditFeelingsList from "./components/EditFeelingsList";
 import FeelingDetails from "./components/FeelingDetails";
+import ChatBot from "./components/ChatBot/ChatBot";
 import {RiLogoutCircleRLine} from "react-icons/ri";
 import {RiHome4Line} from "react-icons/ri";
 import {RiUser3Line} from "react-icons/ri";
@@ -154,10 +155,13 @@ class App extends React.Component {
               authenticated={authenticated}
               component={EditFeelingsList}
             />
-
-
-
-
+            <PrivateRoute 
+              exact 
+              path="/chatbot"
+              user={this.state.user} 
+              authenticated={authenticated}
+              component={ChatBot}
+            />
             <AnonRoute
               exact
               path="/login"
