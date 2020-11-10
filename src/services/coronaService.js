@@ -6,7 +6,7 @@ const service = axios.create({
 
 export const getAllCountries = async () => {
     try {
-      const countriesList = await service.get('/v3/stats/worldometer/country?countryCode=');
+      const countriesList = await service.get('/v3/stats/worldometer/country');
   
       return countriesList.data;
     } catch (error) {
