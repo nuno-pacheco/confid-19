@@ -8,7 +8,7 @@ export default {
     span7: 'Como te sentes',
     span8: 'Criar conta',
     span9: 'Entrar',
-    span10: 'POSSO ESTAR INFECTADO',
+    span10: 'FALAR COM A MARY',
     span11: "Atualizar",
     span12: "Apagar",
     span13: "Partilhar",

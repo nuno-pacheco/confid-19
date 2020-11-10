@@ -8,7 +8,7 @@ export default {
     span7: 'How are you feeling',
     span8: 'Sign up',
     span9: 'Login',
-    span10: "I THINK I'M INFECTED",
+    span10: "TALK WITH MARY",
     span11: "Update",
     span12: "Delete",
     span13: "Share",

@@ -9,7 +9,7 @@ function ChatBot() {
     return (
         <div className="container chatbotcontainer">
             <header className="ChatBot-top">
-                <Chatbot config={config} actionProvider={ActionProvider} messageParser={MessageParser} />
+                <Chatbot className="chatbotProps" config={config} actionProvider={ActionProvider} messageParser={MessageParser} />
             </header>
         </div>
     )

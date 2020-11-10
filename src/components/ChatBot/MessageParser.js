@@ -10,6 +10,10 @@ class MessageParser {
         this.actionProvider.greet()
         }
 
+        if (lowerCaseMessage.includes("hi")) {
+          this.actionProvider.greet()
+          }
+
         if (lowerCaseMessage.includes("tired")) {
         this.actionProvider.confort1()
         }
@@ -29,6 +33,10 @@ class MessageParser {
         if (lowerCaseMessage.includes("prevention")) {
             this.actionProvider.handlePreventionList();
         }
+
+        if (lowerCaseMessage.includes("prevent")) {
+          this.actionProvider.handlePreventionList();
+      }
 
 
     }

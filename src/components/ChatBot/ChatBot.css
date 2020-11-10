@@ -1,8 +1,9 @@
 .chatbotcontainer{
-    margin-top: 25%;
+    margin-top: 45%;
+    
     width: 100vw;
 }
 
-.ChatBot-top{
-
+.chatbotProps{
+    width:200%;
 }
