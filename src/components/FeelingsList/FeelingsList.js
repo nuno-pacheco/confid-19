@@ -51,7 +51,7 @@ class FeelingsList extends Component {
                           <p style={{maxWidth: '400px'}} >{feeling.description} </p>
                           <sub>Updated at: {feeling.update_at}</sub>
                         </div>
-                        <FacebookButton url={`https://confid-19-server.herokuapp.com/all_feelings/${feeling._id}`} appId={949368812258074} className="faceButton">
+                        <FacebookButton url={`https://confid-19.netlify.app/all_feelings/${feeling._id}`} appId={949368812258074} className="faceButton">
                           <RiFacebookBoxFill/> <Translate content="span13"/>
                         </FacebookButton>  
                       </div>
