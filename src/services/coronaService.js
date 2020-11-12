@@ -23,12 +23,3 @@ export const getPtStats = async () => {
     return error;
   }
 }
-
-export const getCoronaNews = async () => {
-  try{
-    const coronaNews = await service.get('/news/trending');
-    return coronaNews.data;
-  } catch (error) {
-    return error;
-  }
-}

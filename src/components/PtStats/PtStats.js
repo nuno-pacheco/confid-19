@@ -33,8 +33,6 @@ class PtStats extends Component {
         return (
             <div>
                 <ul>
-           {/*          {this.state.pt.map(
-                        ({todayCases, todayDeaths, cases, deaths, updated }) => ( */}
                             <div key={""}>
                                 <div className="homecontent">
                                     <div className="homeupdate">

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { getCoronaNews } from "../../services/coronaService";
+import axios from 'axios';
 import './CoronNews.css';
 import Translate from 'react-translate-component';
 import { FacebookButton }  from "react-social";
@@ -7,21 +7,27 @@ import { IconContext } from "react-icons";
 import {RiFacebookBoxFill} from "react-icons/ri";
 
 
+
 class CoronaNews extends Component {
   state = {
     news:{},
   };
 
-  fetchNews = () => {   
-    getCoronaNews()
-      .then((news) => {
-        this.setState({ news });
+ 
+  getCovidNews= () =>{
+    axios.get(`https://newsapi.org/v2/everything?q=Covid&sortBy=date&apiKey=cf30f0720b324d74b071853c1c464733`)
+    .then(response=> {
+      this.setState({
+        news: response.data
       })
-      .catch((error) => console.log(error));
-  };
+    })
+    .catch ((err) =>console.log(err));
+  }
+
+
 
   componentDidMount = () => {
-    this.fetchNews();
+    this.getCovidNews();
   };
 
   render() {
@@ -36,11 +42,11 @@ class CoronaNews extends Component {
                 <div className="row">
                     <div className='col-12' style={{ maxHeight: '65vh', maxWidth: '100vw', overflow: 'scroll' }}>
                         <ul>
-                        {this.state.news.items && this.state.news.items.map(
-                            ({ nid, title, description, publishedAt, url, urlToImage }) => (
+                        {this.state.news.articles && this.state.news.articles.map(
+                            ({ id, title, description, publishedAt, url, urlToImage }) => (
                             <li className="card m-3 d-flex"
                                 style={{maxWidth: 540, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
-                                key={nid}>
+                                key={id}>
                             <div className= "list-group">
                                 <div className="newsImage">
                                     <img src={urlToImage} alt={this.props.urlToImage}/> 
