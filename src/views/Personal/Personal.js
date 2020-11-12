@@ -19,7 +19,7 @@ function PersonalArea (props) {
             <div className="container">
                 <Header1/>
                 <div className="personalh1">
-                    <h1 className="personalh1"><Translate content="span6"/> {username&&props.user.username} ?</h1>
+                    <h1 className="personalh1"><Translate content="span6"/> {username&&props.user.username} !</h1>
                 </div>    
                     <nav>
                         <div className="buttonBox">
