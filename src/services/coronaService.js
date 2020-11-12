@@ -1,12 +1,12 @@
 import axios from "axios";
 
 const service = axios.create({
-  baseURL: 'https://api.coronatracker.com'
+  baseURL: 'https://corona.lmao.ninja'
 });
 
 export const getAllCountries = async () => {
     try {
-      const countriesList = await service.get('/v3/stats/worldometer/country');
+      const countriesList = await service.get('/v2/countries?yesterday&sort');
   
       return countriesList.data;
     } catch (error) {
@@ -16,7 +16,7 @@ export const getAllCountries = async () => {
 
 export const getPtStats = async () => {
   try{
-    const ptStats = await service.get('/v3/stats/worldometer/country?countryCode=PT');
+    const ptStats = await service.get('/v2/countries/portugal');
 
     return ptStats.data;
   } catch (error) {

@@ -36,7 +36,7 @@ class CountriesList extends Component {
 
 
     render = () => {
-        console.log(this.state.countries);
+        console.log("ALL STAR", this.state.countries);
         let filteredCountries = this.state.countries.filter(
             (country) => {
                 return country.country.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
@@ -56,37 +56,37 @@ class CountriesList extends Component {
                                 <div className='col-12' style={{ maxHeight: '55vh', maxWidth: '100vw', overflow: 'scroll' }}>
                                     <ul>
                                     {filteredCountries.map(
-                                        ({countryCode, country, dailyConfirmed, dailyDeaths, totalConfirmed, totalDeaths, lastUpdated}) => (
+                                        ({country, todayCases, todayDeaths, countryInfo, cases, deaths, updated}) =>  console.log(countryInfo) || (
+
                                             <li className="card m-3 d-flex"
                                             style={{width: 340, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
                                             key={country}
                                             >
-                                            
                                             <div className= "list-group">
                                                 <div>
                                                     <div className="countryFlags">
                                                         <h4> {country} </h4>
-                                                        <img src={`https://www.countryflags.io/${countryCode}/flat/64.png`} alt="Country Flag"></img>
+                                                      <img src={countryInfo.flag} alt="Country Flag"></img> 
                                                     
                                                     </div>
                                                     <div className="dailyContent">                                                
                                                         <div>
-                                                            <p className="infecteds"><Translate content="p1"/> <br/> <strong className="numb">{dailyConfirmed}</strong></p> 
+                                                            <p className="infecteds"><Translate content="p1"/> <br/> <strong className="numb">{todayCases}</strong></p> 
                                                         </div>
                                                         <div>
-                                                            <p className="deaths"><Translate content="p2"/> <br/> <strong className="numb">{dailyDeaths}</strong></p> 
+                                                            <p className="deaths"><Translate content="p2"/> <br/> <strong className="numb">{todayDeaths}</strong></p> 
                                                         </div>
                                                     </div>
                                                     <div className="totalContent">
                                                         <div>
-                                                            <p className="infecteds"><Translate content="p3"/> <br/> <strong className="numb">{totalConfirmed}</strong></p> 
+                                                            <p className="infecteds"><Translate content="p3"/> <br/> <strong className="numb">{cases}</strong></p> 
                                                         </div>
                                                         <div>
-                                                            <p className="deaths"><Translate content="p4"/> <br/> <strong className="numb">{totalDeaths}</strong></p> 
+                                                            <p className="deaths"><Translate content="p4"/> <br/> <strong className="numb">{deaths}</strong></p> 
                                                         </div>
                                                     </div>
                                                     <div>
-                                                        <sub><Translate content="span11"/> {lastUpdated} </sub>
+                                                        <sub><Translate content="span11"/> {updated} </sub>
                                                     </div>
                                                     
                                                 </div>
