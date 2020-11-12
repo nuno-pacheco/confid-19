@@ -20,7 +20,7 @@ class Home extends Component {
     return (
       <div className="Home">
         <div>
-        <PtStats/>
+       <PtStats/>
         </div>
           <div className="home">
             <div className="buttonslink">

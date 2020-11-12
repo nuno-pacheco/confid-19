@@ -26,7 +26,7 @@ export const getPtStats = async () => {
 
 export const getCoronaNews = async () => {
   try{
-    const coronaNews = await service.get('/news/trending?limit=10&offset&country=Portugal&countryCode%27');
+    const coronaNews = await service.get('/news/trending');
     return coronaNews.data;
   } catch (error) {
     return error;

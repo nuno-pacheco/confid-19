@@ -10,7 +10,7 @@ class ActionProvider {
     }
 
     confort1(){
-        const confort1Message = this.createChatBotMessage("It is being tough for everyone, but one day it will pass.")
+        const confort1Message = this.createChatBotMessage("It is being tough for everyone, but one day it will pass. 🙏")
         this.updateChatbotState(confort1Message)
     }
 
@@ -18,7 +18,27 @@ class ActionProvider {
         const confort2Message = this.createChatBotMessage("Try to stay calm, cometimes sharing with someone close to us what we are feeling helps us to relieve.")
         this.updateChatbotState(confort2Message)
     }
+
+    handleMusicList = () => {
+      const message = this.createChatBotMessage(
+        "Click on the Link bellow and enjoy some calm music, you will feel better:",
+        {
+          widget: "musicList",
+        }
+      )
+      this.updateChatbotState(message);
+    }
     
+    handleMindfulnessClass = () => {
+      const message = this.createChatBotMessage(
+        "Mindfulness is also a good way to feel yourself relaxed, try it 😉",
+        {
+          widget: "mindfulessClass",
+        }
+      )
+      this.updateChatbotState(message);
+    } 
+
     handleSymptomsList = () => {
         const message = this.createChatBotMessage(
           "I've got the following resources for you about Coronavirus Symptoms:",
@@ -26,7 +46,6 @@ class ActionProvider {
             widget: "symptomsLinks",
           }
         );
-    
         this.updateChatbotState(message);
     };
 

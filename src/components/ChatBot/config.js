@@ -60,6 +60,32 @@ const config = {
         ]
       }
     },
+    {
+      widgetName: "musicList",
+      widgetFunc: (props) => <LinkList {...props} />,
+      props: {
+        options: [
+          {
+            text: "Music to Relax",
+            url: "https://www.youtube.com/watch?v=2OEL4P1Rz04",
+            id: 1,
+          },
+        ]
+      }
+    },
+    {
+      widgetName: "mindfulessClass",
+      widgetFunc: (props) => <LinkList {...props} />,
+      props: {
+        options: [
+          {
+            text: "Do some Mindfulness",
+            url: "https://www.youtube.com/watch?v=-2zdUXve6fQ",
+            id: 1,
+          },
+        ]
+      }
+    },
 
 
 

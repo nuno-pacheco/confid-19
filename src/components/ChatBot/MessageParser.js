@@ -5,7 +5,7 @@ class MessageParser {
   
     parse(message) {
       const lowerCaseMessage = message.toLowerCase()
-        
+        // Saudations
         if (lowerCaseMessage.includes("hello")) {
         this.actionProvider.greet()
         }
@@ -13,7 +13,7 @@ class MessageParser {
         if (lowerCaseMessage.includes("hi")) {
           this.actionProvider.greet()
           }
-
+        // Bad Feelings
         if (lowerCaseMessage.includes("tired")) {
         this.actionProvider.confort1()
         }
@@ -25,6 +25,14 @@ class MessageParser {
         if (lowerCaseMessage.includes("frustrated")) {
         this.actionProvider.confort2()
         }
+        // Provide Resources
+        if (lowerCaseMessage.includes("stress")) {
+        this.actionProvider.handleMusicList();
+        }
+
+        if (lowerCaseMessage.includes("stress")) {
+          this.actionProvider.handleMindfulnessClass();
+          }
 
         if (lowerCaseMessage.includes("symptoms")) {
         this.actionProvider.handleSymptomsList();
