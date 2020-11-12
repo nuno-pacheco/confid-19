@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import Translate from 'react-translate-component';
+import Translate from 'react-translate-component';import { FacebookButton }  from "react-social";
+import { IconContext } from "react-icons";
+import {RiFacebookBoxFill} from "react-icons/ri";
 import './FeelingsList.css';
 
 
@@ -33,6 +35,7 @@ class FeelingsList extends Component {
   render(){
     return(
       <div className="container1">
+      <IconContext.Provider value={{color: "white", size: "2em"}}>
         <h1><Translate content="span7"/> {this.props.user.username} ?</h1>
         <div className ="row">
           <div className='col-12' style={{ maxHeight: '67vh', width: '98vw', overflow: 'scroll' }}>  
@@ -47,7 +50,10 @@ class FeelingsList extends Component {
                           </Link>
                           <p style={{maxWidth: '400px'}} >{feeling.description} </p>
                           <sub>Updated at: {feeling.update_at}</sub>
-                        </div>  
+                        </div>
+                        <FacebookButton url={`https://confid-19-server.herokuapp.com/all_feelings/${feeling._id}`} appId={949368812258074} className="faceButton">
+                          <RiFacebookBoxFill/> <Translate content="span13"/>
+                        </FacebookButton>  
                       </div>
                   </li>
                 
@@ -56,6 +62,7 @@ class FeelingsList extends Component {
             </ul>
           </div> 
         </div>
+        </IconContext.Provider>
       </div>
     )
   }
