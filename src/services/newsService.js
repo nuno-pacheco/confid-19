@@ -2,8 +2,9 @@ import axios from 'axios';
 
 const service = axios.create({
     baseURL: 'https://newsapi.org/v2',
-    apiKey: process.env.REACT_APP_API_KEY  
+    REACT_APP_API_KEY : process.env  
 });
+
 
 
 export const getCovidNews = async () => {
