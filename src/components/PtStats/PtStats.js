@@ -26,9 +26,6 @@ class PtStats extends Component {
         console.log("Working fine")
         console.log(this.state.pt); 
         const {todayCases, todayDeaths, cases, deaths, updated } = this.state.pt
-        if (!todayCases) return <h1>Loading....</h1>
-
-
 
         return (
             <div>

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from 'axios';
+import { getCovidNews } from "../../services/newsService";
 import './CoronNews.css';
 import Translate from 'react-translate-component';
 import { FacebookButton }  from "react-social";
@@ -13,8 +13,16 @@ class CoronaNews extends Component {
     news:{},
   };
 
+  fetchNews = () => {
+    getCovidNews()
+      .then((news) => {
+        this.setState({ news });
+      })
+      .catch((error) => console.log(error));
+  };
+
  
-  getCovidNews= () =>{
+  /*getCovidNews= () =>{
     axios.get(`https://newsapi.org/v2/everything?q=Covid&sortBy=date&apiKey=cf30f0720b324d74b071853c1c464733`)
     .then(response=> {
       this.setState({
@@ -23,11 +31,10 @@ class CoronaNews extends Component {
     })
     .catch ((err) =>console.log(err));
   }
-
-
+  */
 
   componentDidMount = () => {
-    this.getCovidNews();
+    this.fetchNews();
   };
 
   render() {
@@ -46,7 +53,7 @@ class CoronaNews extends Component {
                             ({ id, title, description, publishedAt, url, urlToImage }) => (
                             <li className="card m-3 d-flex"
                                 style={{maxWidth: 540, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
-                                key={id}>
+                                key={url}>
                             <div className= "list-group">
                                 <div className="newsImage">
                                     <img src={urlToImage} alt={this.props.urlToImage}/> 
