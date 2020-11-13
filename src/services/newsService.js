@@ -6,7 +6,7 @@ const service = axios.create({
 
 export const getCovidNews = async () => {
     try {
-        const coronaNews = await service.get('/everything?q=Covid&sortBy=date&apiKey=cf30f0720b324d74b071853c1c464733');
+        const coronaNews = await service.get('/everything?q=Covid&apiKey=cf30f0720b324d74b071853c1c464733');
         return coronaNews.data;
     } catch (error) {
         return error;
