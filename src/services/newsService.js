@@ -1,12 +1,14 @@
 import axios from 'axios';
 
 const service = axios.create({
-    baseURL: 'https://newsapi.org/v2'
+    baseURL: 'https://newsapi.org/v2',
+    apiKey: process.env.REACT_APP_API_KEY  
 });
+
 
 export const getCovidNews = async () => {
     try {
-        const coronaNews = await service.get('/everything?q=Covid&apiKey=cf30f0720b324d74b071853c1c464733');
+        const coronaNews = await service.get(`/everything?q=Covid&apiKey=${process.env.REACT_APP_API_KEY}`);
         return coronaNews.data;
     } catch (error) {
         return error;
