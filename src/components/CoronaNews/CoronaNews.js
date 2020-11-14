@@ -21,18 +21,6 @@ class CoronaNews extends Component {
       .catch((error) => console.log(error));
   };
 
- 
-  /*getCovidNews= () =>{
-    axios.get(`https://newsapi.org/v2/everything?q=Covid&sortBy=date&apiKey=cf30f0720b324d74b071853c1c464733`)
-    .then(response=> {
-      this.setState({
-        news: response.data
-      })
-    })
-    .catch ((err) =>console.log(err));
-  }
-  */
-
   componentDidMount = () => {
     this.fetchNews();
   };
@@ -50,9 +38,9 @@ class CoronaNews extends Component {
                     <div className='col-12' style={{ maxHeight: '65vh', maxWidth: '100vw', overflow: 'scroll' }}>
                         <ul>
                         {this.state.news.articles && this.state.news.articles.map(
-                            ({ id, title, description, publishedAt, url, urlToImage }) => (
+                            ({title, description, publishedAt, url, urlToImage }) => (
                             <li className="card m-3 d-flex"
-                                style={{maxWidth: 540, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
+                                style={{width: 330, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
                                 key={url}>
                             <div className= "list-group">
                                 <div className="newsImage">
@@ -60,6 +48,7 @@ class CoronaNews extends Component {
                                 </div>
                                 <div className="newsTitle">
                                     <h3>{title}</h3>
+                                    {console.log("Link clicked")}
                                 </div>
                                 <div>
                                     <p>{description}</p>    
