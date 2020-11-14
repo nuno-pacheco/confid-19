@@ -1,5 +1,5 @@
 .countriescontainer{
-    margin-top: -20%;
+    margin-top: -30%;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -23,7 +23,9 @@
 
 .row{
     margin-top: 2%;
+    margin-right: 2vw;
 }
+
 
 .countryFlags{
     display: flex;

@@ -31,4 +31,31 @@ export default {
     h11: 'Last news about Covid!',
     h3: 'Edit form',
 
+   //Chatbot
+
+    greet: "Hi, dear.",
+    undefined: "Sorry, I dont't know how to answer that!",
+    confort1: "It is being tough for everyone, but one day it will pass. 🙏",
+    confort2: "Try to stay calm, sometimes sharing with someone close to us what we are feeling helps us to relieve.",
+    musicListMessage: "Click on the Link bellow and enjoy some calm music, you will feel better:",
+    mindfulnessMessage: "Mindfulness is also a good way to feel yourself relaxed, try it 😉",
+    symptomMessage: "I've got the following resources for you about Coronavirus Symptoms:",
+    preventionMessage: "I've got the following resources for you about Coronavirus Prevention:",
+    vaccineMessage: "Some Vaccines are in the develpment phase, check:",
+    yourWelcome: "You're welcome, take care of yourself! ❤️",
+
+    //Chatbot.config
+
+    initialMessage: "Hi, I'm here to help. What do you want to ask?",
+    symptoms: "Symptoms",
+    symptoms1: "How to proceed",
+    symptoms2: "When to Quarantine?",
+    prevention: "Prevention",
+    prevention1: "How to prevent",
+    prevention2: "Recomended Masks",
+    vaccine: "Vaccine Progress",
+    vaccine1: "Check WHO site",
+    vaccine2: "NY Times Vaccine Tracker",
+    musicList: "Music to Relax",
+    mindfulness: "Try to do some Mindfulnes",
 }

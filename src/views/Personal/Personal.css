@@ -6,6 +6,11 @@
 
 .buttonBox{
     margin-top: 12%;
+    width: 90vw;
+    margin-left: 9vw;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
 }
 
 .personalh1{
@@ -18,8 +23,8 @@
 }
 
 .buttonRF{
-    background-color: rgb(64,68,253); 
-    width: 100%;
+    background-color:  #4044FD; 
+    width: 90%;
     color: white;
     padding: 5% 5%;
     text-align: center;
@@ -31,8 +36,8 @@
 }
 
 .buttonPI{
-    background-color: rgb(255,17,0, 0.8); 
-    width: 100%;
+    background-color: #E4615E; 
+    width: 90%;
     color: white;
     padding: 5% 5%;
     text-align: center;

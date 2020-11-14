@@ -30,4 +30,32 @@ export default {
     h1: 'Procura um país!',
     h11: 'Últimas notícias Covid!',
     h3: 'Formulário de edição',
+
+    //Chatbot
+
+    greet: "Olá!",
+    undefined: "Desculpa, mas não sei o que responder a isso!",
+    confort1: "Está a ser duro para toda a gente, mas um dia vai passar.🙏",
+    confort2: "Tenta ter calma, partilha isso com alguém próximo de ti, vais-te sentir melhor.",
+    musicListMessage: "Clica no Link  abaixo e ouve música calma, vai-te fazer bem:",
+    mindfulnessMessage: "Mindfulness também é uma boa forma de descontrair, experimenta 😉",
+    symptomMessage: "Visita os Links abaixo sobre os sintomas associados ao Coronavirus:",
+    preventionMessage: "Visita os Links abaixo sobre prevenção do Coronavirus:",
+    vaccineMessage: "Algumas vacinas já estão desenvolvimento, verifica:",
+    yourWelcome: "De nada, olha por ti! ❤️",
+
+    //Chatbot.config
+
+    initialMessage: "Olá, estou aqui para ajudar. O que pretendes saber ou dizer?",
+    symptoms: "Sintomas",
+    symptoms1: "Como proceder",
+    symptoms2: "Quando entrar em quarentena",
+    prevention: "Prevenção",
+    prevention1: "Como prevenir",
+    prevention2: "Recomendações com máscaras",
+    vaccine: "Progresso das vacinas",
+    vaccine1: "Ver o site da WHO",
+    vaccine2: "NY Times tracking da vacina",
+    musicList: "Misica para relaxar",
+    mindfulness: "Faz algum Mindfulness",
 }

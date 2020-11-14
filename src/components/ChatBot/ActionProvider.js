@@ -1,27 +1,47 @@
+import React from 'react'; 
+import Translate from 'react-translate-component';
+import ReactPlayer from "react-player"
+
+
 class ActionProvider {
     constructor(createChatBotMessage, setStateFunc) {
       this.createChatBotMessage = createChatBotMessage;
       this.setState = setStateFunc;
     }
-    
+
     greet() {
-      const greetingMessage = this.createChatBotMessage("Hi, dear.")
+      const greetingMessage = this.createChatBotMessage(<Translate content="greet"/>)
       this.updateChatbotState(greetingMessage)
     }
 
+    forNothing(){
+      const yourWelcomeMessage = this.createChatBotMessage(<Translate content="yourWelcome"/>)
+      this.updateChatbotState(yourWelcomeMessage)
+    } 
+
+    undefined(){
+      const undefinedMessage = this.createChatBotMessage(<Translate content="undefined"/>)
+      this.updateChatbotState(undefinedMessage)
+    }
+
     confort1(){
-        const confort1Message = this.createChatBotMessage("It is being tough for everyone, but one day it will pass. 🙏")
+        const confort1Message = this.createChatBotMessage(<Translate content="confort1"/>)
         this.updateChatbotState(confort1Message)
     }
 
     confort2(){
-        const confort2Message = this.createChatBotMessage("Try to stay calm, cometimes sharing with someone close to us what we are feeling helps us to relieve.")
+        const confort2Message = this.createChatBotMessage(<Translate content="confort2"/>)
         this.updateChatbotState(confort2Message)
+    }
+
+    motivational(){
+      const motivationalSpeach = this.createChatBotMessage(<ReactPlayer url="https://www.youtube.com/watch?v=UCt8m4DSz10" width='100%' height="100%"/>) 
+      this.updateChatbotState(motivationalSpeach)
     }
 
     handleMusicList = () => {
       const message = this.createChatBotMessage(
-        "Click on the Link bellow and enjoy some calm music, you will feel better:",
+        <Translate content="musicListMessage"/>,
         {
           widget: "musicList",
         }
@@ -31,7 +51,7 @@ class ActionProvider {
     
     handleMindfulnessClass = () => {
       const message = this.createChatBotMessage(
-        "Mindfulness is also a good way to feel yourself relaxed, try it 😉",
+        <Translate content="mindfulnessMessage"/>,
         {
           widget: "mindfulessClass",
         }
@@ -41,7 +61,7 @@ class ActionProvider {
 
     handleSymptomsList = () => {
         const message = this.createChatBotMessage(
-          "I've got the following resources for you about Coronavirus Symptoms:",
+          <Translate content="symptomMessage"/>,
           {
             widget: "symptomsLinks",
           }
@@ -51,7 +71,7 @@ class ActionProvider {
 
     handlePreventionList = () => {
         const message = this.createChatBotMessage(
-          "I've got the following resources for you about Coronavirus Prevention:",
+          <Translate content="preventionMessage" />,
           {
             widget: "preventionLinks",
           }
@@ -60,6 +80,16 @@ class ActionProvider {
         this.updateChatbotState(message);
     };
 
+    handleVaccineList = () => {
+      const message = this.createChatBotMessage(
+        <Translate content="vaccineMessage"/>,
+        {
+          widget: "vaccineLinks",
+        }
+      );
+  
+      this.updateChatbotState(message);
+  };
 
 
     

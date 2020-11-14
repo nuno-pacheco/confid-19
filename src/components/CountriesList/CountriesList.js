@@ -36,7 +36,6 @@ class CountriesList extends Component {
 
 
     render = () => {
-        console.log("ALL STAR", this.state.countries);
         let filteredCountries = this.state.countries.filter(
             (country) => {
                 return country.country.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
@@ -56,10 +55,10 @@ class CountriesList extends Component {
                                 <div className='col-12' style={{ maxHeight: '55vh', maxWidth: '100vw', overflow: 'scroll' }}>
                                     <ul>
                                     {filteredCountries.map(
-                                        ({country, todayCases, todayDeaths, countryInfo, cases, deaths, updated}) =>  console.log(countryInfo) || (
+                                        ({country, todayCases, todayDeaths, countryInfo, cases, deaths, updated}) =>  (
 
                                             <li className="card m-3 d-flex"
-                                            style={{width: 340, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
+                                            style={{width: 340, display: 'flex', flexDirection: 'column', justifyContent: 'center'}}
                                             key={country}
                                             >
                                             <div className= "list-group">

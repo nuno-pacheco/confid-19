@@ -59,14 +59,12 @@ class PtStats extends Component {
                                     
                                 </div>
                             </div>
-{/*                         )
-                            
-                    )} */}
                 </ul>
                 
             </div>
         )
     }
 }
+
 
 export default PtStats
