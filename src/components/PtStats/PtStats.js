@@ -25,7 +25,7 @@ class PtStats extends Component {
     render = () => {
         console.log("Working fine")
         console.log(this.state.pt); 
-        const {todayCases, todayDeaths, cases, deaths, updated } = this.state.pt
+        const {todayCases, todayDeaths, cases, deaths} = this.state.pt
 
         return (
             <div>
@@ -33,7 +33,7 @@ class PtStats extends Component {
                             <div key={""}>
                                 <div className="homecontent">
                                     <div className="homeupdate">
-                                       <p> <Translate content="p5"/><i>{updated}</i></p>
+                                       <p> <Translate content="p5"/></p>
                                     </div>
                                     <div className="homedata">
                                         <div className="infectedsdata24h">

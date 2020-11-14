@@ -17,7 +17,7 @@ export default {
     p2: 'Deaths last 24H:',
     p3: 'Total infecteds:',
     p4: 'Total deaths:',
-    p5: 'Last update:',
+    p5: 'Data from Portugal case.',
     p6: 'Already have an Account?',
     p7: "Don't have an Account?",
     p8: "Developed by Nuno Pacheco",

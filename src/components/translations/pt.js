@@ -17,7 +17,7 @@ export default {
     p2: 'Mortos 24H:',
     p3: 'Total de infectados:',
     p4: 'Total de mortos:',
-    p5: 'Atualizado a:',
+    p5: 'Informação relativa a Portugal.',
     p6: 'Já tens uma conta?',
     p7: 'Não tens conta criada?',
     p8: "Desenvolvido por Nuno Pacheco",
